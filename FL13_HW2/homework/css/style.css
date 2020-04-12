@@ -189,20 +189,24 @@ p {
     background-color: lightskyblue;
 }
 
-#contact_subject::placeholder {
-content: url("img/email-icon.png");
-width: 20px;
-height: 20px;
-position: absolute;
-top: 0px;
-right: 0px;
+#contact_subject{
+    background-image: url("../img/email-icon.png");
+    background-position: right;
+    background-size: 30px;
+    background-repeat: no-repeat;
 }
 
-#contact {
-    position: relative;
-}
 .btn.btn-primary.submit-btn {
     position: absolute;
     bottom: 15px;
     right: 40px;
+    background-color: white;
+    color: lightskyblue;
+    border-color: lightskyblue;
+}
+
+.btn.btn-primary.submit-btn:hover {
+
+    background-color: lightskyblue;
+    color:white;
 }
