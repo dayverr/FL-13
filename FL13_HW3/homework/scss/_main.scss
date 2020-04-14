@@ -1,0 +1,302 @@
+@mixin href($font,$size,$color){
+    font-family: $font;
+    font-size: $size;
+    color: $color;
+}
+
+
+@mixin button($width, $height, $color, $b_color, $font, $f_size, $mr) {
+    display: flex;
+    width: $width;
+    height: $height;
+    color: $color;
+    background-color: $b_color;
+    border: none;
+    font-family: $font;
+    font-size: $f_size;
+    font-weight: bold;
+    align-items: center;
+    justify-content: center;
+    margin-right: $mr;
+  }
+
+
+body {
+    margin: 0px;
+    font-family: $font-main;
+    color: $font-main-color;
+    box-sizing: border-box;
+    background-color: $back-color;
+}
+
+.header {
+    display: flex;
+    width: 100%;
+    border-radius: 0px 0px 800px 0px/0px 0px 300px 0px;
+    background: $img-back;
+    background-size: cover;
+    background-position: $img-bottom;
+    height: auto;
+
+    .header-wrap {
+        margin-top: 25px;
+        margin-left: 190px;
+        display: flex;
+        max-width: 830px;
+        flex-direction: column;
+        align-items: flex-start;
+
+        .header_heading {
+            position: relative;
+            font-size: 100px;
+            font-weight: bold;
+            margin: 0px;
+            line-height: 1em;
+            padding-top: 100px;
+            padding-bottom: 80px;
+            z-index: 1;
+            font-family: $font-header;
+
+        }
+
+        .header_heading:after {
+            content: "";
+            width: 420px;
+            height: 70px;
+            display: block;
+            background-color: $highlight;
+            position: absolute;
+            bottom: 80px;
+            left: 0px;
+            z-index: -1;
+        }
+
+
+        .header_text {
+            font-size: 24px;
+            padding-bottom: 75px;
+        }
+
+        //do mixin
+
+        a {
+            @include href($font-main,25px,white)
+        }
+    }
+}
+
+.header-wrap div:not([class]) {
+    display: flex;
+    width: auto;
+    align-items: center;
+    margin-bottom: 220px;
+}
+
+
+.landing-logo {
+    display: flex;
+    flex-direction: row;
+
+    p {
+        font-family: $font-logo;
+        padding-left: 10px;
+        margin: 0;
+        font-size: 30px;
+        font-weight: 700;
+    }
+
+    span {
+        display: flex;
+        font-size: 14px;
+        align-items: center;
+        justify-content: center;
+        font-weight: normal;
+        margin: $logo-margin;
+    }
+
+    img {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+.section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .section_text {
+        font-size: 55px;
+        font-weight: 600;
+        line-height: 0px;
+        margin: 0;
+        margin-top: 80px;
+        margin-bottom: 50px;
+        color: $font-main-color;
+        position: relative;
+        z-index: 1;
+        font-family: $font-header;
+    }
+
+    .section_text:after {
+        content: "";
+        width: 250px;
+        height: 70px;
+        display: block;
+        background-color: $highlight;
+        position: absolute;
+        bottom: -30px;
+        right: 15px;
+        z-index: -1;
+    }
+
+
+
+    .section_card_wrap {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 1130px;
+        height: auto;
+
+
+        .section_card {
+            margin-top: 30px;
+            background-color: $card-color;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            border-radius: 8px;
+            width: 100%;
+
+
+            .section_card_img {
+                height: 300px;
+                width: auto;
+                margin: 27px;
+                border-radius: 8px;
+            }
+
+            .section_card_right_container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                width: 500px;
+                margin-left: 100px;
+                margin-right: 120px;
+
+                a {
+                    @include href($font-main,20px,$text-color)
+                }
+
+                .section_card_heading {
+                    font-family: $font-header;
+                    font-size: 30px;
+                    font-weight: 600;
+                    color: white;
+                    line-height: 0em;
+                }
+
+                .section_card_text {
+                    font-size: 20px;
+                    color: $text-color;
+                    text-align: justify;
+                }
+            }
+        }
+    }
+}
+
+.section_banner {
+    @extend .section;
+    width: 1200px;
+    flex-direction: row;
+    justify-content: space-around;
+    background-image: linear-gradient(45deg, map-get($gradient,"first"),map-get($gradient,"second"));
+    border-radius: 8px;
+    margin-top: 100px;
+    margin-bottom: -90px;
+
+    .section_banner_heading {
+        font-size: 35px;
+        font-weight: bold;
+        margin: 0;
+        padding-top: 30px;
+        padding-bottom: 30px;
+        position: relative;
+        z-index: 1;
+        font-family: $font-header;
+    }
+
+    .section_banner_heading:after {
+        content: "";
+        width: 78px;
+        height: 60px;
+        display: block;
+        background-color: $highlight;
+        position: absolute;
+        top: 15px;
+        left: 140px;
+        z-index: -1;
+    }
+
+    .section_banner_text {
+        font-size: 20px;
+        color: $text-color;
+        margin: 0;
+        padding-bottom: 55px;
+    }
+
+}
+
+.footer {
+    width: 100%;
+    height: 300px;
+    background-color: $card-color;
+    display: flex;
+    align-items: flex-end;
+
+    .footer-wrap {
+        width: 100%;
+        height: auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        padding-bottom: 70px;
+    }
+
+    .footer_text {
+        width: 370px;
+        height: auto;
+        color: $text-color;
+        font-size: 18px;
+    }
+
+    .footer-cr {
+        color: $text-color;
+        font-size: 19px;
+    }
+
+    .landing-logo {
+        p {
+            color: $text-color;
+        }
+
+        span {
+            color: $text-color;
+        }
+    }
+}
+
+
+
+
+//do mixin
+.header_button {
+    @include button(180px,65px,white,$button-color,$font-alt,24px,190px)
+}
+
+.section_banner_button {
+    @include button(180px,65px,white,$button-color,$font-alt,24px,0px)
+}
