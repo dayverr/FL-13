@@ -1,5 +1,5 @@
 let word = prompt('Input your word');
-if (/\s/.test(word)||word==='') {
+if (!word.replace(/\s/g, '').length||word==='') {
     alert('wrong input');
 } else {
     let arr = Array.from(word);
