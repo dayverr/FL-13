@@ -1,7 +1,7 @@
 let check = prompt('Input your check');
 if (isNaN(check)===false && check>0) {
     check=Number(check);
-    let tip = +prompt('Input percentage of tip');
+    let tip = prompt('Input percentage of tip');
     if (isNaN(tip)===false && tip>0 && tip<=100) {
         tip=Number(tip);
         let tipAm = check*tip/100;
