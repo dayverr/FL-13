@@ -26,7 +26,7 @@ function checkPass(pass,login){
 
 function greet(login){
     let curentTime = new Date().getHours();
-    if(curentTime<20) {
+    if(curentTime<20&&curentTime>8) {
         alert('Good day, dear '+login);
     } else {
         alert('Good evening, dear '+login);
