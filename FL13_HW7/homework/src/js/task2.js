@@ -28,7 +28,7 @@ function isWin (playerNumber,winingNumber) {
 }
 
 function curentAttempt (min,max,left,total,possible){
-    let firstLine='Chose a roulette pocket number from '+min+'to '+max;
+    let firstLine='Chose a roulette pocket number from  '+min+' to  '+max;
     let secondLine= 'Attempts left: '+ left;
     let thirdLine='Total prize: ' + total + '$';
     let fourthLine='Possible prize on currenr attempt: ' + possible+'$';
