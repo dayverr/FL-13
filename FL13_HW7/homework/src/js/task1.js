@@ -1,7 +1,8 @@
 function checkLogin(name){
+    const MIN_SYMB = 4;
     if (name===''){
         return alert('Canceled');
-    } else if (Array.from(name).length<4) {
+    } else if (Array.from(name).length<MIN_SYMB) {
         return alert('I dont know any users having name length less than 4 symbols');
     } else if (name==='User'||name==='Admin'){
         return 'valid';
@@ -25,8 +26,10 @@ function checkPass(pass,login){
 
 
 function greet(login){
+    const DAY_START_HOUR=8;
+    const EVENING_START_HOUR =20;
     let curentTime = new Date().getHours();
-    if(curentTime<20&&curentTime>8) {
+    if(curentTime<EVENING_START_HOUR&&curentTime>DAY_START_HOUR) {
         alert('Good day, dear '+login);
     } else {
         alert('Good evening, dear '+login);
