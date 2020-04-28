@@ -52,7 +52,7 @@ if(wantPlay()){
     for(let attemptLeft=3;attemptLeft>0;attemptLeft--){
 
 
-        let playerNumber=curentAttempt(minNumber,minNumber,attemptLeft,totalPrize,possiblePrize);
+        let playerNumber=curentAttempt(minNumber,maxNumber,attemptLeft,totalPrize,possiblePrize);
         if(isWin(playerNumber,winNumber)){
             if(confirm('Congratulation, you won! Your prize is: '+possiblePrize+'$. Do you want to continue?')){
                 maxNumber=maxNumber+rangeIncrease;
