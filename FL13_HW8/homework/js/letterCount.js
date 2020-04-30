@@ -9,4 +9,4 @@ function letterCount (string,letter){
     return result;
 }
 
-letterCount('','g');
+letterCount();
