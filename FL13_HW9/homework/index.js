@@ -21,3 +21,13 @@ function mapArray(arr,func) {
 });
     return executeforEach(arr,func);
 }
+
+function filterArray (arr,func) {
+    let arr2=[]
+    for (let i=0;i<arr.length;i++){
+        if (func(arr[i])) {
+            arr2.push(arr[i])
+        }
+    }
+    return arr2;
+}
