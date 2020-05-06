@@ -82,7 +82,15 @@ function getArrayOfKeys(arr,key) {
         arr2[i]=arr[i];
     }
     executeforEach(arr2,function(el){
- return el[key] 
+ return el[key]
 })
     return arr2
+}
+
+function substitute (arr) {
+    let arr2=[];
+    for(let i = 0; i<arr.length; i++){
+        arr2[i]=arr[i];
+    }
+    return mapArray(arr2,(el) => el<20&&el>10 ? '*' : el)
 }
