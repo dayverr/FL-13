@@ -16,7 +16,9 @@ function executeforEach (arr,callback){
 
 function mapArray(arr,func) {
 
-    executeforEach(arr,function(el){return(el=+el)})
+    executeforEach(arr,function(el){
+ return +el;
+})
     executeforEach(arr,func);
     return arr;
 }
