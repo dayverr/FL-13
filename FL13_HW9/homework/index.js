@@ -54,7 +54,7 @@ function containsValue (arr,value) {
 }
 
 function flipOver(string) {
-    let result="";
+    let result='';
     for (let i=string.length-1;i>-1;i--){
         result=result+string[i];
     }
@@ -67,5 +67,22 @@ function makeListFromRange(arr) {
     for(let i=1; i<arrLen+1; i++) {
         arr2[i]=arr2[i-1]+1;
     }
+    return arr2;
+}
+
+const fruits = [
+    { name: 'apple', weight: 0.5 },
+    { name: 'pineapple', weight: 2 }
+    ];
+
+
+function getArrayOfKeys(arr,key) {
+    let arr2=[];
+    for(let i = 0; i<arr.length; i++){
+        arr2[i]=arr[i];
+    }
+    executeforEach(arr2,function(el){
+ return el[key] 
+})
     return arr2
 }
