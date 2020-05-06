@@ -52,3 +52,11 @@ function containsValue (arr,value) {
     }
     return result;
 }
+
+function flipOver(string) {
+    let result="";
+    for (let i=string.length-1;i>-1;i--){
+        result=result+string[i];
+    }
+    return result;
+}
