@@ -60,3 +60,12 @@ function flipOver(string) {
     }
     return result;
 }
+
+function makeListFromRange(arr) {
+    let arrLen = arr[1]-arr[0];
+    let arr2=[arr[0]];
+    for(let i=1; i<arrLen+1; i++) {
+        arr2[i]=arr2[i-1]+1;
+    }
+    return arr2
+}
