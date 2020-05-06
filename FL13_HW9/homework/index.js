@@ -7,27 +7,31 @@ function convert () {
 }
 
 
-function executeforEach (arr,func){
+function executeforEach (arr,callback){
     for (let i=0;i<arr.length;i++){
-        arr[i]=func(arr[i]);
+        arr[i]=callback(arr[i]);
     }
-    return arr;
 }
 
 
 function mapArray(arr,func) {
-    executeforEach(arr,function(element) {
- return Number(element)
-});
-    return executeforEach(arr,func);
+
+    executeforEach(arr,function(el){return(el=+el)})
+    executeforEach(arr,func);
+    return arr;
 }
 
-function filterArray (arr,func) {
-    let arr2=[]
+function filterArray(arr,func) {
+    let arr2 =[];
     for (let i=0;i<arr.length;i++){
-        if (func(arr[i])) {
-            arr2.push(arr[i])
+        arr2[i]=arr[i];
+    }
+    executeforEach(arr2,func);
+    let arr3=[];
+    for (let i=0;i<arr.length;i++){
+        if (arr2[i]){
+            arr3.push(arr[i])
         }
     }
-    return arr2;
+    return arr3;
 }
