@@ -37,3 +37,18 @@ function filterArray(arr,func) {
     }
     return arr3;
 }
+
+function containsValue (arr,value) {
+    let arr2 =[];
+    for (let i=0;i<arr.length;i++){
+        arr2[i]=arr[i];
+    }
+    executeforEach(arr2,(el) => el===value);
+    let result=false;
+    for (let i=0;i<arr2.length;i++){
+        if (arr2[i]){
+            result=true;
+        }
+    }
+    return result;
+}
