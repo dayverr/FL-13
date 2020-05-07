@@ -94,3 +94,12 @@ function substitute (arr) {
     }
     return mapArray(arr2,(el) => el<20&&el>10 ? '*' : el)
 }
+
+const date = new Date(2020, 0, 2);
+
+
+function getPastDay(date, dayPaste) {
+    let tempDate=new Date(date);
+    tempDate.setDate( tempDate.getDate() - dayPaste );
+    return tempDate.getDate();
+}
