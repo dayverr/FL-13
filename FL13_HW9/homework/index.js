@@ -103,3 +103,8 @@ function getPastDay(date, dayPaste) {
     tempDate.setDate( tempDate.getDate() - dayPaste );
     return tempDate.getDate();
 }
+
+function formatDate(date) {
+    return ""+date.getFullYear()+"/"+date.getMonth()+"/"+date.getDate()+" "+date.getHours()+":"+date.getMinutes();
+
+}
