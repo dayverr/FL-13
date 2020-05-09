@@ -7,6 +7,7 @@ function Fighter (obj) {
     this.hp = obj.hp;
     this.wins = 0;
     this.lose = 0;
+    this.maxHp = obj.hp;
 
     this.getName = () => this.name;
     this.getDamage = () => this.damage;
@@ -27,6 +28,9 @@ function Fighter (obj) {
     }
     this.heal = function(number) {
         this.hp+=number;
+        if (this.hp > this.maxHp) {
+            this.hp = this.maxHp;
+        }
     }
     this.logCombatHistory = function(){
         console.log('Name : ' + this.getName() + ', Wins : ' + this.getWins() + ', Losses : '+ this.getLose())
