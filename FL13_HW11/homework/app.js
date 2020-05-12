@@ -61,6 +61,7 @@ function createTreeDom(arr) {
  return;
 }
   let ul = document.createElement('ul');
+  let empty = '<ul><li><span class="empty">Folder is empty</span></li></ul>';
   for (let i=0; i<arr.length; i++) {
     let li = document.createElement('li');
     li.innerHTML = `<i class="material-icons folder">folder_open</i><span> ${arr[i]['title']}</span> `;
@@ -68,7 +69,7 @@ function createTreeDom(arr) {
       li.innerHTML = `<i class="material-icons file">insert_drive_file</i><span> ${arr[i]['title']}</span> `;
     }
     if(arr[i]['folder']&&arr[i]['children']===null){
-      li.innerHTML =`<i class="material-icons folder">folder</i><span class="noChildren"> ${arr[i]['title']}</span> `;
+      li.innerHTML =`<i class="material-icons folder">folder_open</i><span> ${arr[i]['title']}</span> ${empty}`;
     }
       if (arr[i]['children']){
       let childrenUl = createTreeDom(arr[i]['children']);
@@ -98,10 +99,5 @@ container.onclick = function(event) {
   } else if (event.target.previousSibling.innerHTML === 'folder'){
     event.target.previousSibling.innerHTML = 'folder_open';
   }
-
-  if (event.target.classList.contains('noChildren')){
-    event.target.parentNode.append('ul')
-  }
-
   childrenContainer.hidden = !childrenContainer.hidden;
 }

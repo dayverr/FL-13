@@ -29,3 +29,8 @@ li {
 .file {
     color:gray;
 }
+
+.empty {
+    font-style: italic;
+    margin-left: -50px;
+}
