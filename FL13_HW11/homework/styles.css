@@ -34,3 +34,7 @@ li {
     font-style: italic;
     margin-left: -50px;
 }
+
+span:hover {
+    background-color: rgba(128, 128, 128, 0.192);
+}
