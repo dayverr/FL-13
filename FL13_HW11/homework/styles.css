@@ -1,1 +1,31 @@
 /* TODO: your styles goes here*/
+
+#root {
+    display: flex;
+    width: 400px;
+    height: 400px;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.185);
+    font-size: 20px;
+    cursor: pointer;
+}
+
+ul {
+    position: relative;
+}
+
+li {
+    list-style-type: none;
+}
+
+.folder,
+.file {
+    color: rgb(214, 214, 69);
+    position: absolute;
+    left: 10px;
+}
+
+.file {
+    color:gray;
+}
