@@ -70,7 +70,7 @@ function createTreeDom(arr) {
     if(arr[i]['folder']&&arr[i]['children']===null){
       li.innerHTML =`<i class="material-icons folder">folder</i><span class="noChildren"> ${arr[i]['title']}</span> `;
     }
-      if (arr[i]['children']!==null){
+      if (arr[i]['children']){
       let childrenUl = createTreeDom(arr[i]['children']);
       if (childrenUl) {
         li.append(childrenUl);
