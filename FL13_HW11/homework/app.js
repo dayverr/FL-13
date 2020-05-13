@@ -101,3 +101,35 @@ container.onclick = function(event) {
   }
   childrenContainer.hidden = !childrenContainer.hidden;
 }
+
+let contMenu = '<menu><button id="rename">rename</button><button id="delete">delete</button></menu>';
+container.insertAdjacentHTML('beforeend',contMenu);
+
+let menu = document.querySelector('menu');
+function showMenu(x, y){
+menu.style.left = x + 'px';
+menu.style.top = y + 'px';
+menu.classList.add('show-menu');
+}
+function hideMenu(){
+menu.classList.remove('show-menu');
+}
+
+function onContextMenu(e){
+e.preventDefault();
+showMenu(e.pageX, e.pageY);
+let deleteEl = document.querySelector('#delete');
+deleteEl.onclick = function(){
+  let icon = e.target.previousSibling
+  e.target.remove();
+  icon.remove();
+}
+document.addEventListener('click', onMouseclick, false);
+}
+
+function onMouseclick(){
+hideMenu();
+document.removeEventListener('click', onMouseclick);
+}
+
+document.addEventListener('contextmenu', onContextMenu, false);
