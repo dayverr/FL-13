@@ -13,4 +13,10 @@
 .right-wrapper {
     border: 2px solid grey;
     flex-direction: column;
+    padding: 30px;
+}
+
+.editForm {
+    display: flex;
+    flex-direction: column;
 }

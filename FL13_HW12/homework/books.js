@@ -22,4 +22,8 @@ let books = [
     }
 ]
 
+if(!localStorage.getItem('books', JSON.stringify(books))){
 localStorage.setItem('books', JSON.stringify(books));
+}
+
+// localStorage.setItem('books', JSON.stringify(books));
