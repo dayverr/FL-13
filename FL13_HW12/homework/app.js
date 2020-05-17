@@ -25,13 +25,6 @@ list.innerHTML= listOfBooc;
 list.insertAdjacentHTML('beforeend','<button class="Add-btn">add</button>');
 }
 
-showList();
-
-
-preview.innerHTML = '<h2>This is the way</h2><p>do some thing</p>';
-
-
-
 function showPreview() {
     let contentId = location.hash.slice(1);
     lockalBooks.forEach(element => {
@@ -41,8 +34,6 @@ function showPreview() {
         }
     })
 }
-
-window.addEventListener('hashchange', showPreview);
 
 function editFormCreate () {
     let editForm = document.querySelector('.right-wrapper');
@@ -72,7 +63,6 @@ addForm.innerHTML = temphtml;
 function saveEditValue(e){
     let editebleId = e.target.previousSibling.getAttribute('href').slice(1);
     let form = document.querySelector('.editForm');
-
     form.addEventListener('submit', function (event) {
         event.preventDefault()
         let formName = form.querySelector('.form-name').value;
@@ -83,8 +73,6 @@ function saveEditValue(e){
     });
 }
 
-
-
 function saveEditValueToLockal (id,name,author,img,plot) {
     lockalBooks.forEach(element => {
         if(element['id']===id){
@@ -93,7 +81,7 @@ function saveEditValueToLockal (id,name,author,img,plot) {
             element['img']=img;
             element['plot']=plot;
         }
-    })
+    });
     localStorage.setItem('books', JSON.stringify(lockalBooks));
     showPreview();
     showList();
@@ -106,8 +94,8 @@ function saveAddValueToLockal (id,name,author,img,plot) {
             'author': author,
             'img': img,
             'plot': plot
-    }
-    localStorage.push(obj);
+    };
+    lockalBooks.push(obj);
     localStorage.setItem('books', JSON.stringify(lockalBooks));
     showPreview();
     showList();
@@ -126,6 +114,9 @@ function saveAddValue(){
     });
 }
 
+showList();
+preview.innerHTML = '<h2>This is the way</h2><p>do some thing</p>';
+window.addEventListener('hashchange', showPreview);
 
 list.addEventListener('click', function(e){
     if (e.target.className==='edit-btn'){
@@ -140,10 +131,3 @@ list.addEventListener('click', function(e){
         saveAddValue();
     }
 });
-
-
-
-// console.log(formName);
-//         console.log(formAuthor);
-//         console.log(formImg);
-//         console.log(formPlote);
