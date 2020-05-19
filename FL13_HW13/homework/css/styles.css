@@ -6,7 +6,27 @@
     background-color: #343a40;
 }
 
+.game-section,
+.game-section_dark {
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
 .footer {
     background-color: #343a40;
 }
 
+.game-item {
+    max-width: 30%;
+}
+
+@media only screen  and (max-width : 768px) {
+    .game-item {
+        max-width: 90%;
+    }
+    .game-section,
+    .game-section_dark {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+}

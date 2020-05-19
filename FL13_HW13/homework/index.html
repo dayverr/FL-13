@@ -55,17 +55,17 @@
             <p class="text-white"> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minus, repellat!</p>
 
             <div class="game-section-wrapper d-flex flex-column flex-md-row justify-content-center align-items-center ">
-                <div class="d-flex flex-column align-items-center m-3" style="max-width: 30%;">
+                <div class="game-item d-flex flex-column align-items-center m-3">
                     <img class="w-100" src="assets/1.jpg" alt="1">
                     <h5 class="text-white m-2">Card Title</h5>
                     <p class="text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, quasi!</p>
                 </div>
-                <div class="d-flex flex-column align-items-center m-3" style="max-width: 30%;">
+                <div class="game-item d-flex flex-column align-items-center m-3">
                     <img class="w-100" src="assets/2.jpg" alt="2">
                     <h5 class="text-white m-2">Card Title</h5>
                     <p class="text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, quasi!</p>
                 </div>
-                <div class="d-flex flex-column align-items-center m-3" style="max-width: 30%;">
+                <div class="game-item d-flex flex-column align-items-center m-3">
                     <img class="w-100" src="assets/3.jpg" alt="3">
                     <h5 class="text-white m-2">Card Title</h5>
                     <p class="text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, quasi!</p>
@@ -73,17 +73,17 @@
             </div>
 
             <div class="game-section-wrapper d-flex flex-column flex-md-row justify-content-center align-items-center" >
-                <div class="d-flex flex-column align-items-center m-3" style="max-width: 30%;">
+                <div class="game-item d-flex flex-column align-items-center m-3">
                     <img class="w-100" src="assets/4.jpg" alt="4">
                     <h5 class="text-white m-2">Card Title</h5>
                     <p class="text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, quasi!</p>
                 </div>
-                <div class="d-flex flex-column align-items-center m-3" style="max-width: 30%;">
+                <div class="game-item d-flex flex-column align-items-center m-3">
                     <img class="w-100" src="assets/5.jpg" alt="5">
                     <h5 class="text-white m-2">Card Title</h5>
                     <p class="text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, quasi!</p>
                 </div>
-                <div class="d-flex flex-column align-items-center m-3" style="max-width: 30%;">
+                <div class="game-item d-flex flex-column align-items-center m-3">
                     <img class="w-100" src="assets/6.jpg" alt="6">
                     <h5 class="text-white m-2">Card Title</h5>
                     <p class="text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, quasi!</p>
@@ -96,7 +96,7 @@
             <h3 class=" mt-5">Game section</h3>
             <p class=""> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minus, repellat!</p>
 
-            <div class="game-section-wrapper d-flex flex-column flex-md-row ">
+            <div class="game-section-wrapper d-flex flex-column flex-md-row align-items-center justify-content-around">
                 <div class="d-flex flex-column align-items-center m-3" style="max-width: 45%;">
                     <img class="w-100" src="assets/7.jpg" alt="1">
                     <h5 class=" m-2">Card Title</h5>
@@ -109,7 +109,7 @@
                 </div>
             </div>
 
-            <div class="game-section-wrapper d-flex flex-column flex-md-row ">
+            <div class="game-section-wrapper d-flex flex-column flex-md-row align-items-center justify-content-around">
                 <div class="d-flex flex-column align-items-center m-3" style="max-width: 45%;">
                     <img class="w-100" src="assets/9.jpg" alt="1">
                     <h5 class=" m-2">Card Title</h5>
@@ -122,7 +122,7 @@
                 </div>
             </div>
 
-            <div class="game-section-wrapper d-flex flex-column flex-md-row ">
+            <div class="game-section-wrapper d-flex flex-column flex-md-row align-items-center justify-content-around">
                 <div class="d-flex flex-column align-items-center m-3" style="max-width: 45%;">
                     <img class="w-100" src="assets/11.jpg" alt="1">
                     <h5 class=" m-2">Card Title</h5>
@@ -134,28 +134,25 @@
                     <p class="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, quasi!</p>
                 </div>
             </div>
-
-            <footer class=" footer d-flex flex-column flex-md-row w-100 justify-content-around align-items-center" >
-
-                <div class="d-flex flex-column align-items-center m-3" style="max-width: 45%;">
-                    <h5 class="m-2 text-white">Subscribe</h5>
-                    <p class="text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, quasi!</p>
-                </div>
-
-                <div class="d-flex flex-column align-items-center m-3">
-                    <form class="w-100">
-                        <div class="form-group w-100 ">
-                          <input type="email" class="form-control w-100" id="exampleInputEmail1" placeholder="Email">
-                        </div>
-                        <button type="submit" class="btn btn-primary w-100">Subscribe</button>
-                    </form>
-                </div>
-
-            </footer>
-
-
-
         </div>
+
+        <footer class=" footer d-flex flex-column flex-md-row w-100 justify-content-around align-items-center" >
+
+            <div class="d-flex flex-column align-items-center m-3" style="max-width: 45%;">
+                <h5 class="m-2 text-white">Subscribe</h5>
+                <p class="text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, quasi!</p>
+            </div>
+
+            <div class="d-flex flex-column flex-md-row align-items-center m-3">
+                <form class="w-100">
+                    <div class="form-group w-100 ">
+                      <input type="email" class="form-control w-100" id="exampleInputEmail1" placeholder="Email">
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100 bg-danger">Subscribe</button>
+                </form>
+            </div>
+
+        </footer>
 
     </div>
 </body>
