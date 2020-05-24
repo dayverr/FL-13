@@ -39,4 +39,18 @@ function FrontendLab (studentsList,failedHomeworksLimit) {
             }
         }
     }
+
+    this.printStudentsEligibleForTest = function(){
+        let allowPoint=0;
+        for(let i=0; i<_studentsList.length; i++){
+            for(let j=0; j<_studentsList[i].resultsOf.length; j++){
+                if(!_studentsList[i].resultsOf[j].success){
+                    allowPoint++;
+                }
+            }
+            if(allowPoint<=_failedHomeworksLimit) {
+                console.log(_studentsList[i])
+            }
+        }
+    }
 }
