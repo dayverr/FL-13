@@ -1,7 +1,7 @@
 function Vehicle(color,engine){
-let _color = color;
-let _engine = engine;
-let _maxSpeed = 70;
+this.color = color;
+this.engine = engine;
+let maxSpeed = 70;
 let curentSpeed = 0;
 let isBraking = false;
 let isDriving = false;
@@ -9,12 +9,12 @@ let speedchange = 20;
 let yourMaxSpeedWas = 0;
 
 this.upgradeEngine = function (newEngine,maxSpeed){
-    _engine=newEngine;
-    _maxSpeed=maxSpeed;
+    this.engine=newEngine;
+    this.maxSpeed=maxSpeed;
 }
 
 this.getInfo = function(){
-    return {color:_color, engine:_engine, maxSpeed:_maxSpeed}
+    return {color:color, engine:engine, maxSpeed:maxSpeed}
 }
 
 this.drive = function(){
@@ -26,6 +26,9 @@ this.drive = function(){
             clearInterval(start);
             }
         console.log(curentSpeed);
+        if(curentSpeed>maxSpeed){
+            console.log('speed is too high, SLOW DOWN!')
+        }
         curentSpeed+=speedchange;
         }, delay)
     } else {
@@ -51,4 +54,19 @@ this.stop=function(){
             console.log('Already slows down')
         }
     }
+}
+
+function Car (model,color,engine){
+    Vehicle.apply(this,arguments);
+    this.model=model;
+    this.color=color;
+    this.engine=engine;
+}
+
+
+function Motrorcycle (model,color,engine){
+    Car.apply(this,arguments);
+    this.model=model;
+    this.color=color;
+    this.engine=engine;
 }
