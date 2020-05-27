@@ -3,7 +3,7 @@ let _color = color;
 let _engine = engine;
 let _maxSpeed = 70;
 let curentSpeed = 0;
-let previousSpeed = 0;
+let isBraking = false;
 let speedchange = 20;
 
 this.upgradeEngine = function (newEngine,maxSpeed){
@@ -20,18 +20,19 @@ this.drive = function(){
 
 
  let start= setInterval(function(){
- console.log(curentSpeed); if ( previousSpeed>curentSpeed){
+  if (isBraking){
     clearInterval(start);
-} previousSpeed=curentSpeed; curentSpeed+=speedchange;
+}
+console.log(curentSpeed);
+curentSpeed+=speedchange;
 }, delay)
 }
 
-
-
 this.stop=function(){
+    isBraking=true;
     let delay = 1500;
     let stop= setInterval(function(){
- console.log(curentSpeed); curentSpeed-=speedchange; if ( curentSpeed<speedchange){
+ console.log(curentSpeed); curentSpeed-=speedchange; if ( curentSpeed<=0){
         clearInterval(stop);
 }
 }, delay)
