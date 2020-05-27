@@ -4,7 +4,9 @@ let _engine = engine;
 let _maxSpeed = 70;
 let curentSpeed = 0;
 let isBraking = false;
+let isDriving = false;
 let speedchange = 20;
+let yourMaxSpeedWas = 0;
 
 this.upgradeEngine = function (newEngine,maxSpeed){
     _engine=newEngine;
@@ -16,25 +18,37 @@ this.getInfo = function(){
 }
 
 this.drive = function(){
-    let delay = 2000;
-
-
- let start= setInterval(function(){
-  if (isBraking){
-    clearInterval(start);
-}
-console.log(curentSpeed);
-curentSpeed+=speedchange;
-}, delay)
+    if(!isDriving){
+        isDriving=true;
+        let delay = 2000;
+        let start= setInterval(function(){
+            if (isBraking){
+            clearInterval(start);
+            }
+        console.log(curentSpeed);
+        curentSpeed+=speedchange;
+        }, delay)
+    } else {
+        console.log('your vehicle is olready drive')
+    }
 }
 
 this.stop=function(){
-    isBraking=true;
-    let delay = 1500;
-    let stop= setInterval(function(){
- console.log(curentSpeed); curentSpeed-=speedchange; if ( curentSpeed<=0){
+    if (!isBraking){
+        yourMaxSpeedWas=curentSpeed;
+        isBraking=true;
+        let delay = 1500;
+        let stop= setInterval(function(){
+        console.log(curentSpeed);
+        curentSpeed-=speedchange;
+        if ( curentSpeed<=0){
+        console.log(curentSpeed);
+        console.log(`Vehicle is stopped. Maximum speed during the drive was ${yourMaxSpeedWas}`)
         clearInterval(stop);
-}
-}, delay)
-}
+        }
+        }, delay)
+        } else {
+            console.log('Already slows down')
+        }
+    }
 }
