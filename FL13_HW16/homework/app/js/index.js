@@ -33,12 +33,6 @@ function deleteUser (userId){
     xhr.send()
 }
 
-function getUserId (ev){
-    if (ev.target.className === 'delete'){
-        return ev.target.parentNode.id
-    }
-}
-
 updateFromServer();
 let form = document.forms.namedItem('adduser');
 
