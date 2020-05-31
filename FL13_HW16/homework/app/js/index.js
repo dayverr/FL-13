@@ -10,7 +10,8 @@ function updateFromServer (){
     appContainer.innerHTML = '';
     for(let i=0; i<xhr.response.length; i++){
     appContainer.insertAdjacentHTML('beforeend',
-    `<div><span>${xhr.response[i].id}---${xhr.response[i].name}---${xhr.response[i].username}</span>
+    `<div id="${xhr.response[i].id}">
+    <span>${xhr.response[i].id}---${xhr.response[i].name}---${xhr.response[i].username}</span>
     <button class="update">Update</button>
     <button class="delete">Delete</button></div>`);
     }
@@ -25,8 +26,23 @@ function postServer (data){
     xhr.send(JSON.stringify(data));
 }
 
+function deleteUser (userId){
+    const xhr = new XMLHttpRequest();
+    xhr.open('DELETE', baseUrl + `/users/${userId}`);
+    xhr.setRequestHeader('Authorization' ,'admin');
+    xhr.send()
+}
+
+function getUserId (ev){
+    if (ev.target.className === 'delete'){
+        return ev.target.parentNode.id
+    }
+}
+
 updateFromServer();
 let form = document.forms.namedItem('adduser');
+
+
 form.addEventListener('submit', function(ev) {
     ev.preventDefault();
     let data = {
@@ -36,3 +52,11 @@ form.addEventListener('submit', function(ev) {
     postServer(data);
     updateFromServer();
 }, false);
+
+document.addEventListener('click', function(ev){
+    if (ev.target.className === 'delete'){
+        console.log(ev.target.parentNode.id);
+        deleteUser(ev.target.parentNode.id);
+    }
+    updateFromServer();
+})
