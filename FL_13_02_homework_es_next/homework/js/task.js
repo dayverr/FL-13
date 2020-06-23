@@ -24,3 +24,9 @@ function requiredArg() {
  function add(x = requiredArg(), y = requiredArg()){
     return x + y;
  }
+
+ function usersListAB (url) {
+    fetch(url)
+    .then(response => response.json())
+    .then(data => console.log(data));
+ }
