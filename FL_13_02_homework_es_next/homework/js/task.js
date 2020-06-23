@@ -16,4 +16,11 @@ function regroupObject(obj) {
     return newObj;
 }
 const findUniqueElements = (arr) => Array.from(new Set(arr));
-const hideNumber = (str) => str.slice(-4).padStart(str.length,'*')
+const hideNumber = (str) => str.slice(-4).padStart(str.length,'*');
+
+function requiredArg() {
+    throw new Error('Missing property');
+ }
+ function add(x = requiredArg(), y = requiredArg()){
+    return x + y;
+ }
