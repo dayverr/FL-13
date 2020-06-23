@@ -3,8 +3,7 @@ const copiedArray = (arr) => [...arr];
 
 function addUniqueId (obj){
     let copyObj=Object.assign({}, obj);
-    let id = Symbol("id");
-    copyObj[id]=1;
+    copyObj.id=Symbol();
     return copyObj;
 }
 
@@ -19,3 +18,5 @@ function regroupObject(obj) {
     newObj.user.id=id;
     return newObj;
 }
+
+const findUniqueElements = (arr) => Array.from(new Set(arr));
