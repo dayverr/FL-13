@@ -7,3 +7,15 @@ function addUniqueId (obj){
     copyObj[id]=1;
     return copyObj;
 }
+
+
+function regroupObject(obj) {
+    const{name, details:{id, age, univercity}}=obj;
+    const newObj={};
+    newObj.univercity=univercity;
+    newObj.user={};
+    newObj.user.age=age;
+    newObj.user.name=name;
+    newObj.user.id=id;
+    return newObj;
+}
