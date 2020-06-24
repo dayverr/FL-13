@@ -25,8 +25,8 @@ function requiredArg() {
     return x + y;
  }
 
- function usersListAB (url) {
-     fetch(url)
+ function usersListAB () {
+     fetch('https://jsonplaceholder.typicode.com/users')
      .then(response => response.json())
      .then(function (array) {
          let names =[];
