@@ -26,17 +26,31 @@ function addItemToDom (textOfTodos, isDone){
   }
 }
 
-$list.empty();
-todosCopy.forEach(element => {
-  addItemToDom(element.text,element.done)
-});
+function reloadNewTodo(){
+  $list.empty();
+  todosCopy.forEach(element => {
+    addItemToDom(element.text,element.done)
+  });
+}
+
+function removeItem(withText){
+  todosCopy.forEach(function(item, index, object) {
+    console.log(item.text);
+    if (item.text == withText) {
+      object.splice(index, 1);
+    }
+  });
+  reloadNewTodo();
+}
+
 
 $add.click(function(e){
   e.preventDefault();
   todosCopy.push({text: $input.val(), done: false});
-  $list.empty();
-  todosCopy.forEach(element => {
-  addItemToDom(element.text,element.done)
-  })
+  reloadNewTodo();
 })
 
+
+$(document).on('click', '.item-remove', function(e){
+  removeItem($(e.target).prev().text());
+});
